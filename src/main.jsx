@@ -4,7 +4,7 @@ import App from './App.jsx';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import i18n from './i18n'; 
-import { store } from './Redux/store.jsx';
+import { store } from './Redux/Store.jsx';
 import { Provider } from 'react-redux'
 
 
