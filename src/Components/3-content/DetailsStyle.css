@@ -109,30 +109,32 @@ video{
         margin-bottom:10px;
     }
 }
-@media (max-width:950px) { 
-    .mediaContent .gifArea{
+@media (max-width:950px) {
+    .mediaContent .gifArea {
         margin-bottom: 20px;
     }
-    .mediaContent{
+
+    .mediaContent {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-@media (max-width:540px) { 
-    .icon-circle-left{
-        position: absolute;
-        display: none;
-        left: 0;
-        font-size: 45px;
-        color: gray;
-        width:25px;
-        cursor: pointer;
-    }
-    .mediaContent{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+    @media (max-width:540px) {
+        .icon-circle-left {
+            position: absolute;
+            display: none;
+            left: 0;
+            font-size: 45px;
+            color: gray;
+            width: 25px;
+            cursor: pointer;
+        }
 
+        .mediaContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
 }
