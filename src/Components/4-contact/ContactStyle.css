@@ -1,0 +1,231 @@
+.containerContact {
+    max-width: 1200px;
+    /* Limitation de la largeur pour éviter une largeur trop étirée sur de grands écrans */
+    padding: 1em 2rem;
+    /* Ajout de padding sur les côtés pour éviter que le contenu ne touche les bords */
+}
+
+.SectionB {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 1em;
+}
+
+.sectionTitle {
+    font-size: 27px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.icon-mail {
+    color: var(--color-text-subtitle);
+    font-size: 28px;
+}
+
+.paragraphe {
+    margin-bottom: 2em;
+    font-size: 12px;
+    color: var(--color-text-subtitle);
+    line-height: 1.6rem;
+}
+
+
+label {
+    font-size: 13px;
+    color: var(--color-text-subtitle);
+}
+
+.form {
+    width: 100%;
+    max-width: 600px;
+    margin-right: 7em;
+}
+
+#email,
+#message,
+#nomPrenom,
+#ObjectEmail {
+    all: unset;
+    background-color: rgba(63, 63, 70, 0.15);
+    border: 1px solid blue;
+    width: 18rem;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    text-decoration: capitalize;
+
+}
+
+.AdresseSection,
+.emailSection {
+    display: flex;
+    margin-top: 24px;
+}
+
+#email:focus,
+#message:focus,
+#nomPrenom:focus,
+#ObjectEmail:focus {
+    border: 1px solid rgb(45, 212, 191, 0.5);
+    border-radius: 5px;
+}
+
+
+#email:hover,
+#message:hover,
+#nomPrenom:hover,
+#ObjectEmail:hover {
+    border: 1px solid rgb(45, 212, 191, 0.5);
+    border-radius: 5px;
+}
+
+#message {
+    min-height: 9rem;
+    resize: both !important;
+}
+
+#BtnSubmit {
+    background-color: var(--color-background-buttonSubmit);
+    padding: 0.7rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    text-decoration: capitalize;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 25px;
+    padding-top: 5px;
+    border: 1px solid rgba(63 63 70);
+    width: 16rem;
+}
+
+#BtnSubmit:hover {
+    scale: 0.97;
+    border: 1px solid rgb(45, 212, 191, 0.5);
+}
+
+.ChampObligatoire {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 4em;
+}
+
+.messageSucces {
+    display: flex;
+    font-size: 18px;
+    margin-top: 1.7rem;
+}
+
+
+/* Média query pour les écrans jusqu'à 900px */
+@media (max-width: 900px) {
+
+    .AdresseSection,
+    .emailSection,
+    .NomSection,
+    .ObjectSection {
+        display: block;
+    }
+
+    #email,
+    #message,
+    #ObjectEmail,
+    #nomPrenom {
+        margin-left: 0;
+        width: 18rem;
+    }
+
+    .SectionB {
+        display: block;
+        width: 60%;
+    }
+
+    #BtnSubmit {
+        width: auto;
+    }
+
+}
+
+/* Média query pour les écrans jusqu'à 1300px */
+@media (max-width: 1300px) {}
+
+@media (max-width: 540px) {
+    .containerContact {
+        padding: 0;
+        /* Ajout de padding sur les côtés pour éviter que le contenu ne touche les bords */
+    }
+
+    .SectionB {
+        display: block;
+        margin-left: 0;
+        width: auto;
+    }
+
+    .NomSection,
+    .ObjectSection,
+    .emailSection,
+    .AdresseSection {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+        align-items: center;
+    }
+
+    .NomSection input {
+        width: 30px;
+    }
+
+    .SectionB {
+        margin-left: 15px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    #email,
+    #message,
+    #nomPrenom,
+    #ObjectEmail {
+        width: auto;
+    }
+
+    #BtnSubmit {
+        width: auto;
+        position: static;
+        margin: 1em 0 0 0;
+
+    }
+}
+
+
+
+
+.NomSection,
+.ObjectSection,
+.emailSection,
+.AdresseSection,
+.SubmitSection {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.NomSection label,
+.ObjectSection label,
+.AdresseSection label,
+.SubmitSection div,
+.emailSection label {
+    flex-grow: 1;
+    flex-shrink: 1;
+}

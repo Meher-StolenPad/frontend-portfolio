@@ -1,0 +1,49 @@
+
+
+
+.Description{
+    padding:3em 6em;
+}
+
+.Titre {
+      margin: 0;
+      font-size:5em;
+      grid-column: 1;
+      grid-row: 1;
+      z-index: 1;
+      font-family: 'Teko', sans-serif;
+      text-transform: uppercase;
+      animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+    }
+    
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 20px #2d9da9;
+      }
+      to {
+        text-shadow: 0 0 20px #34b3c1, 0 0 100px #4dbbc7;
+      }
+    }
+  
+
+.iconsApropos{
+    display: flex;
+    gap:25px;
+    color:var(--color-text-subtitle);
+    font-size: 25px !important;
+    padding:1em 3.7em;
+
+}
+
+.MailContact,
+.icon-twitter,
+.icon-linkedin1,
+.githubHerro
+{
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+

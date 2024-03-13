@@ -1,0 +1,156 @@
+.container{
+    display: flex;
+    gap:16px;
+    justify-content: space-between;
+    padding:1.5em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+
+}
+
+.AnimIcon{
+    display: flex;
+    height: 18rem;
+    align-items: flex-end;
+    width:30rem;
+}
+
+.LeftParty{
+    display: block;
+}
+ 
+
+.title {
+    margin-top: 25px;
+    margin-bottom: 1em !important; 
+    position: relative;
+    left: 100em; /* Définissez la position initiale de l'avatar */
+    animation: animTitre 1s linear forwards; /* Utilisez 'forwards' pour conserver la dernière étape de l'animation */
+}
+
+  
+.sub-title{
+    margin-top: 25px;
+    color:var(--color-text-subtitle);
+    font-size: 14px;
+    line-height: 1.5;
+    max-width:  45em;
+    padding-bottom: 15px;
+    animation: animTitre 1s linear forwards; /* Utilisez 'forwards' pour conserver la dernière étape de l'animation */
+    position: relative; 
+}
+
+.VoirPlusBtn{
+    color:rgb(82, 159, 242);
+    cursor  : pointer;
+}
+
+.VoirPlusBtn:hover{
+    font-weight: bold;    
+    font-size: 14px;
+}
+
+.VoirPlusBtn::before{
+    content:"...";
+    display : inline-block;
+    width:2px ;  
+    margin-right: 1em;
+    color:var(--color-text-subtitle);
+    ;
+}
+
+.RightParty{
+    display: flex;
+    animation: animTitre 1s linear forwards; /* Utilisez 'forwards' pour conserver la dernière étape de l'animation */
+    position: relative;
+}
+.GroupContact{
+    display:block !important;
+    animation: animTitre 1s linear forwards; /* Utilisez 'forwards' pour conserver la dernière étape de l'animation */
+    position: relative;
+}
+
+
+@keyframes animTitre {
+    0% {
+        left: 100em; 
+    }
+    100% {
+        left: 0; 
+    }
+}
+
+.BtnPlus{
+    color: rgb(77, 77, 242);
+    font-size: 13px;
+    float: right;
+    cursor: pointer;
+}
+
+.BtnConatct {
+    font-weight: bold;    
+    color:var(--color-text-Contact);
+    border: 1px solid rgba(16, 223, 255, 0.958);
+    padding: 10px 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: 10em;
+    position: relative;
+    background: linear-gradient(90deg, rgba(16, 223, 255, 0.89) 50%, transparent 50%);
+    padding: 0.7em 0.5em;
+}
+
+
+.AnimBtn{
+    width:9em;
+    margin-bottom:-1.7em;
+}
+
+.Nom{
+    font-size:25px;
+    color:rgba(16, 223, 255, 0.958);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typeIn 5s steps(20, end) infinite; 
+    margin-bottom: -1.3em;  
+}
+
+@keyframes typeIn {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  
+  
+  
+
+@media(max-width: 800px) {
+    
+    .container{
+        display:block;
+    }
+
+    .BtnConatct{
+        width:10em;
+    }
+
+}
+@media(min-width: 1150px) {    
+    .AnimBtn{
+        z-index: 50;
+    }
+
+    .BtnConatct{
+        padding-top: 0.8em;
+    }
+
+    .GroupContact{
+        display:block !important;
+        width:10em;
+    }
+}
