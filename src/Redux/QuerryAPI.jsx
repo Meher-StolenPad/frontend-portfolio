@@ -5,7 +5,7 @@ const API_TOKEN = process.env.VITE_API_TOKEN;
 export const querryApi = createApi({
   reducerPath: 'querryApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:1337/api/',
+    baseUrl: 'http://vps-96abfae6.vps.ovh.net:1337/api/',
     prepareHeaders: (headers) => {
       // Append Authorization header with API token
       if (API_TOKEN) {
