@@ -1,24 +1,19 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+// Need to use the React-specific entry point to import createApi
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const API_TOKEN = process.env.VITE_API_TOKEN;
-
+const API_TOKEN = import.meta.env.VITE_API_TOKEN;
+// Define a service using a base URL and expected endpoints
 export const querryApi = createApi({
   reducerPath: 'querryApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'http://vps-96abfae6.vps.ovh.net:1337/api/',
-    prepareHeaders: (headers) => {
-      // Append Authorization header with API token
-      if (API_TOKEN) {
-        headers.set('Authorization', `Bearer ${API_TOKEN}`);
-      }
-      return headers;
-    },
-  }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://vps-96abfae6.vps.ovh.net:1337/api/', headers: {Authorization: `Bearer ${API_TOKEN}`} }),
   endpoints: (builder) => ({
     getQuerryByName: builder.query({
-      query: (name) => `${name}`, // Assuming `name` is a path or query parameter
+      query: (name) => `${name}`,
     }),
   }),
-});
+})
 
-export const { useGetQuerryByNameQuery } = querryApi;
+// Export hooks for usage in functional components, which are
+// auto-generated based on the defined endpoints
+export const { useGetQuerryByNameQuery } = querryApi
+
