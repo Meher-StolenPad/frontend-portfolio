@@ -5,7 +5,7 @@ const API_TOKEN = import.meta.env.VITE_API_TOKEN;
 // Define a service using a base URL and expected endpoints
 export const querryApi = createApi({
   reducerPath: 'querryApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://vps-96abfae6.vps.ovh.net:1337/api/', headers: {Authorization: `Bearer ${API_TOKEN}`} }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://vps-96abfae6.vps.ovh.net/api/', headers: {Authorization: `Bearer ${API_TOKEN}`} }),
   endpoints: (builder) => ({
     getQuerryByName: builder.query({
       query: (name) => `${name}`,
