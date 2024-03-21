@@ -16,15 +16,15 @@
     text-transform: uppercase;
     animation: glow 2s ease-in-out infinite alternate;
     text-align: center;
-    color: var(--color-texte-Competances);
+    color: var(--color-timeline-title);
   }
-  
+
   @keyframes glow {
     from {
-      text-shadow: 0 0 20px #2d9da9;
+      text-shadow: var(--color-timeline-text-shadow-anim-1);
     }
     to {
-      text-shadow: 0 0 20px #34b3c1, 0 0 100px #4dbbc7;
+      text-shadow: var(--color-timeline-text-shadow-anim-2);
     }
   }
 

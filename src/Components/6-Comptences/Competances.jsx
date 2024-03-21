@@ -61,31 +61,40 @@ export default function Competances() {
                 <VerticalTimelineElement
                   key={index}
                   className="vertical-timeline-element--work"
-                  contentStyle={{ background: '#83A2FF', color: 'var(--color-text-date)' }}
-                  contentArrowStyle={{ borderRight: '7px solid  #83A2FF' }}
+                  contentStyle={{ background: 'var(--color-timeline-background)', color: 'var(--color-timeline-title)', boxShadow :'var(--color-timeline-background-shadow)'}}
+                  contentArrowStyle={{ borderRight: '7px solid  var(--color-timeline-background)' }}
                   date={item.attributes?.periode.split('-')[0]}//pour avoir l annee seulement
-                  iconStyle={{ background: '#83A2FF', width: '30px', height: '30px', marginLeft: '-15px' }}
+                  iconStyle={{ background: 'var(--color-timeline-background)', width: '10px', height: '10px', marginLeft: '-5px' , marginTop:'25px' }}
                 >
 
                   {/* Use an <img> tag for the icon */}
                   <div className="vertical-timeline-element-icon" style={{ marginTop: '-45px' }}>
-                  {item.attributes && item.attributes.img && item.attributes.img.data && item.attributes.img.data.length > 0 &&
+
+                  {item.attributes &&
+                  item.attributes.img &&
+                  item.attributes.img.data &&
                     <img
-                      src={item.attributes.img.data[0].attributes?.name}
+                      src={"https://vps-96abfae6.vps.ovh.net"+item.attributes.img.data.attributes.url}
                       alt="Timeline icon"
                       style={{ width: '100%', height: '100%', background: 'gray', borderRadius: '45px' }}
-                    />}
+                    />
+                    }
                   </div>
 
                   <h3 className="vertical-timeline-element-title" style={{ textAlign: 'center' }}>{item.attributes?.poste} <br/>
                   {/* <p style={{ color: 'blue' }}>{item.attributes?.periode.split('-')[0]}/{item.attributes.dateDebut.split('-')[1]} - {item.attributes.dateFin.split('-')[0]}/{item.attributes.dateFin.split('-')[1]}</p> */}
                   </h3>
-                  <h4 className="vertical-timeline-element-subtitle" style={{ color: '#FFE3BB', textAlign: 'center' }} ><br /> {item.attributes?.societe} &nbsp; 
-                  <a href={item.attributes?.link} target="_blanc" className="icon-link" style={{ fontSize: '18px' }} /></h4>
-                  <p style={{ color: '#994D1C',marginBottom:'-1.5em' }}>Achievements/Tasks</p>
-                  <p style={{ color: '#200E3A' }}>
+                  <span style={{ display: 'flex', alignItems: 'center' , justifyContent: 'center', color: 'var(--color-timeline-link)' }}>
+                    <a href={item.attributes?.link} target="_blanc" style={{ fontSize: '18px' }} >
+                        <h4 className="vertical-timeline-element-subtitle" style={{  textAlign: 'center' }} ><br /> {item.attributes?.societe} &nbsp;
+                        </h4>
+                    </a>
+                    <div className="icon-link" style={{ marginTop: '26px' }} />
+                  </span>
+{/*                  <p style={{ color: '#994D1C',marginBottom:'-1.5em' }}>Achievements/Tasks</p> */}
+                  <p style={{ color: 'var(--color-timeline-text)' ,whiteSpace: 'pre-line'}}>
                      {item.attributes?.description.split('/').map((part, index) => (
-                      <span key={index}>
+                      <span key={index} style={{ color: 'var(--color-timeline-text)' }}>
                         {index > 0 && <br />} <br />
                         - {part.trim()}{/* Affiche chaque partie et trim() pour enlever les espaces supplémentaires */}
                       </span>

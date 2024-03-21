@@ -89,48 +89,52 @@ export default function Content() {
           <>Loading...</>
         ) : dataProjets ? (
           <>
-            {filteredProjects.map((item, index) => (
-              item.attributes.visibilite &&
-              <article key={item.id} className="card"
-                onMouseEnter={() => handleCardHover(index, true)}
-                onMouseLeave={() => handleCardHover(index, false)}  >
-                {(item.attributes.img &&
-                item.attributes.img.data &&
-                item.attributes.img.data.length > 0 &&
-                item.attributes.img.data[0].attributes &&
-                item.attributes.img.data[0].attributes.name) &&
-                <img src={item.attributes.img.data[0].attributes.name} alt="" />
-                }
+            {filteredProjects.map((item, index) =>
+                {
+                    return(
+                      item.attributes.visibilite &&
+                      <article key={item.id} className="card"
+                        onMouseEnter={() => handleCardHover(index, true)}
+                        onMouseLeave={() => handleCardHover(index, false)}  >
+                        {(item.attributes.img &&
+                        item.attributes.img.data &&
+                        item.attributes.img.data.length > 0 &&
+                        item.attributes.img.data[0].attributes &&
+                        item.attributes.img.data[0].attributes.name) &&
+                        <img src={"https://vps-96abfae6.vps.ovh.net"+item.attributes.img.data[0].attributes.url} alt="" />
+                        }
 
-                <div className="box" >
-                  <h1 className="titleBox"> {item.attributes.title}</h1>
-                  <p className="subtitle" >{item.attributes.description}</p>
+                        <div className="box" >
+                          <h1 className="titleBox"> {item.attributes.title}</h1>
+                          <p className="subtitle" >{item.attributes.description}</p>
 
-                  <div className="icons">
+                          <div className="icons">
 
-                    <div className="iconsCard">
-                      {item.attributes.playStoreLink &&
-                        <a href={item.attributes.playStoreLink} target='_blanc'><img className="playStoreIcon" src="/playstore.png" alt="playStore Icon" /></a>}
-                      {item.attributes.appStoreLink &&
-                        <a href={item.attributes.appStoreLink} target='_blanc' ><img className="appStoreIcon" src="/appstore.png" alt="appSotre Icon" /></a>}
-                      {item.attributes.steamLink &&
-                        <a href={item.attributes.steamLink} target='_blanc'><img className="steamIcon" src="/steam.png" alt="steam Icon" /></a>}
-                      {item.attributes.linkGit &&
-                        <a href={item.attributes.linkGit} target='_blanc'><div className="icon-github icon-githubCard" /></a>
-                      }
-                    </div>
-                    <div style={{ marginTop: '30px' }}>
-                    <span className="link" onClick={() => navigate(`/project/${item.id}`)}>
-                      {t('content.More')}
-                      <div style={{ marginTop: '2px' }} className="icon-arrow-right" />
-                    </span>
-                    </div>
+                            <div className="iconsCard">
+                              {item.attributes.playStoreLink &&
+                                <a href={item.attributes.playStoreLink} target='_blanc'><img className="playStoreIcon" src="/playstore.png" alt="playStore Icon" /></a>}
+                              {item.attributes.appStoreLink &&
+                                <a href={item.attributes.appStoreLink} target='_blanc' ><img className="appStoreIcon" src="/appstore.png" alt="appSotre Icon" /></a>}
+                              {item.attributes.steamLink &&
+                                <a href={item.attributes.steamLink} target='_blanc'><img className="steamIcon" src="/steam.png" alt="steam Icon" /></a>}
+                              {item.attributes.linkGit &&
+                                <a href={item.attributes.linkGit} target='_blanc'><div className="icon-github icon-githubCard" /></a>
+                              }
+                            </div>
+                            <div style={{ marginTop: '30px' }}>
+                            <span className="link" onClick={() => navigate(`/project/${item.id}`)}>
+                              {t('content.More')}
+                              <div style={{ marginTop: '2px' }} className="icon-arrow-right" />
+                            </span>
+                            </div>
 
-                  </div>
-                </div>
-              </article>
+                          </div>
+                        </div>
+                      </article>
 
-            ))}</>
+                    );
+                })}
+                </>
         ) : null
         }
       </div>

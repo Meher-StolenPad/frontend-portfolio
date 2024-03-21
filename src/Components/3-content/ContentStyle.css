@@ -7,7 +7,7 @@ main{
 .RightSection{
     margin-top : -1.3em;
     flex-wrap: wrap;
-    display:flex;    
+    display:flex;
 }
 
 .LeftSection{
@@ -47,7 +47,8 @@ main{
     box-shadow: 0 2px 50px rgba(199, 222, 241, 0.1);
     margin-top:15px;
     margin-left:20px;
-    max-width: 255px;
+    width: 30%;
+    min-width:280px;
     overflow: hidden;
     background-image : linear-gradient(
         rgba(255, 255, 255, 0.05),
