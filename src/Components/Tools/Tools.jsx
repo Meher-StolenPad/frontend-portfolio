@@ -18,7 +18,7 @@ export default function Tools() {
           {data.data.map((item, index) => (
             <div className='cardTools' key={index}>
               <div className='image'>
-                <img src={item.attributes.imageTool.data.attributes.name} />
+                <img src={"https://vps-96abfae6.vps.ovh.net"+item.attributes.imageTool.data[0].attributes.url} />
               </div>
               <div className='content'>
                 <h3>{item.attributes.title}</h3>
