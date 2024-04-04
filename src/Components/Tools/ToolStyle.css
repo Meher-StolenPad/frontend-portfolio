@@ -1,71 +1,142 @@
 
-.containerTools {
-    position : relative;
-    width : 50%;
-    display : flex;
-    align-items : center;
-    justify-content : center;
+.RightSection{
+    margin-top : -1.3em;
     flex-wrap: wrap;
-    padding : 2em;  
-    left: 10em;
-  }
-  
-  .cardTools {
-    position: relative;
-    max-width : 300px;
-    height : 300px;  
-    background-color :aliceblue;
-    margin : 30px 10px;
-    padding : 75px 15px;    
-    display : flex;
-    flex-direction : column;
-    box-shadow : 0 5px 20px rgba(0,0,0,0.5);
-    transition : 0.3s ease-in-out;
-    border-radius : 15px;
-  }
- 
- .cardTools:hover {
-    height : 400px;    
-  }
-  
-  
-.cardTools .image {
-    position : relative;
-    width : 260px;
-    height : 260px;    
-    top : -40%;
-    left: 8px;
-    box-shadow : 0 5px 20px rgba(0,0,0,0.2);
-    z-index : 1;
-  }
-  
-.cardTools .image img {
-    max-width : 100%;
-    border-radius : 15px;
-  }
-  
-.cardTools .content {
-    position : relative;
-    top : -110px;
-    padding : 10px 15px;
-    color : #d97503;
-    text-align : center;    
-    visibility : hidden;
-    opacity : 0;
-    transition : 0.3s ease-in-out;
-      
-  }
-  
-.cardTools:hover .content {
-     margin-top : 30px;
-     visibility : visible;
-     opacity : 1;
-     transition-delay: 0.2s;
-    
+    display:flex;
+}
+
+.card {
+    padding: 10px;
+    border:1px solid rgba(93, 188 ,252 ,0.3);
+    border-radius: 4px;
+    box-shadow: 0 2px 50px rgba(199, 222, 241, 0.1);
+    margin-top:15px;
+    margin-left:20px;
+    width: 30%;
+    min-width:250px;
+    max-width:450px;
+    overflow: hidden;
+    background-image : linear-gradient(
+        rgba(255, 255, 255, 0.05),
+        rgba(255,255,255,0.05)
+    );
+    opacity: 1;
+    animation: fadeOut 0.9s forwards;    
+    transition: animation 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Ajoutez une transition pour un effet doux */
+}
+
+.card.blur {
+    filter: blur(4px);
+    transition: filter 0.3s ease-in-out;
+}
+
+
+/* Animation de l'extinction rapide lors du survol */
+@keyframes fadeOut {
+    0%{rotate : -2deg;}
+    50%{rotate : 2deg;}
+    99%{rotate : -2deg;}
+    100%{rotate : 0deg;}
+}
+
+.card img{
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; /* Ajuste la taille de l'image pour qu'elle couvre le conteneur tout en conservant les proportions */
+}
+
+.box {
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.titleBox {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; /* Nombre de lignes à afficher */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
   }
 
-.cardTools .content a {
-    color:rgba(5, 54, 167, 0.678);
-    font-weight: bold;
+.icons { 
+    display: flex;
+    justify-content: space-between; 
+    margin-left: 3.5em;
+    margin-top: 20px;
+}
+
+.iconsCard {
+    display: flex;
+    gap:0.5em;
+    margin-left: -4em;
+    position: absolute
+}
+
+.card .icon-github,
+.card .icon-link1 {
+  font-size: 1.2rem;
+  color: var(--color-text-subtitle);
+}
+
+.card .icon-github:hover,
+.card .icon-link1:hover {
+  font-size: 1.25rem;
+  color: aliceblue;
+  cursor: pointer;
+}
+.playStoreIcon{
+    max-height: 15px;
+    max-width: 15px;
+}
+
+.appStoreIcon{
+    max-height: 20px;
+    max-width: 20px;
+}
+.steamIcon{
+    max-height: 20px;
+    max-width: 20px;
+}
+.link {
+    font-size: 0.9rem;
+    color: #0077b5;
+    margin-right: 12px;
+    display: flex;
+    cursor:pointer;
   }
   
+
+@keyframes BtnMore {
+    0%   {left:200px; top:0px;}
+    60%  {left:-7em; top:0px;}
+    100% {left:0px; top:0px;}
+  }
+
+.icon-arrow-right {
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+}
+
+
+@media (max-width: 1000px){
+    
+.LeftSection button{
+    width:10rem;
+}
+.subtitle {
+    font-size: 12px;
+
+}
+    
+  }
