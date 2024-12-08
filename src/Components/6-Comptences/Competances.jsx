@@ -13,7 +13,7 @@ export default function Competances() {
   const { data: dataLng, error: errorLng, isLoading: isLoadingLng } = useGetQuerryByNameQuery('languages?populate=*');
 
   // API pour experiences 
-  const { data: dataExp, error: errorExp, isLoading: isLoadingExp } = useGetQuerryByNameQuery('experiences?populate=*');
+  const { data: dataExp, error: errorExp, isLoading: isLoadingExp } = useGetQuerryByNameQuery('experiences?populate=*&sort[PERIODE]=desc');
 
 
   return (
